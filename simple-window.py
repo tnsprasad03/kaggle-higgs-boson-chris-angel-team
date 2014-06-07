@@ -1,4 +1,30 @@
+rom pprint import pprint
+from time import time
+import logging
+
+from sklearn.metrics import roc_auc_score
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.linear_model import SGDClassifier
+from sklearn.grid_search import GridSearchCV
+from sklearn.pipeline import Pipeline
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import HashingVectorizer
+from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.linear_model import RidgeClassifier
+from sklearn.svm import LinearSVC
+from sklearn.linear_model import SGDClassifier, LogisticRegression
+from sklearn.linear_model import Perceptron
+from sklearn.linear_model import PassiveAggressiveClassifier
+from sklearn.naive_bayes import BernoulliNB, MultinomialNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import NearestCentroid
+from sklearn.utils.extmath import density
+from sklearn import metrics
+from sklearn import cross_validation
 import pandas as pd
+import numpy as np
+import json
 def get_train_test_sub():
     df_train = pd.read_csv('data/training.csv')
     df_test = pd.read_csv('data/test.csv')
